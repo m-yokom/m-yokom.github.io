@@ -234,7 +234,8 @@ footer {
   margin: 16px 0;
 }
 
-.footer-links {
+.footer-links,
+.copyright {
   text-align: center;
 }
 
@@ -288,6 +289,22 @@ body.lp a {
     radial-gradient(1.2px 1.2px at 94% 38%, #fff 50%, transparent 51%),
     radial-gradient(ellipse 120% 60% at 50% 100%, rgba(240, 195, 90, 0.28), transparent 60%),
     linear-gradient(180deg, #0b1030 0%, #1b1f4a 45%, #3a2e45 75%, var(--lp-bg) 100%);
+}
+
+/* 縦長の画面（スマホなど）: 画面の高さに合わせて横長のキービジュアルを切り抜くと、中央の2人
+   （ナイト・ゼウス）しか見えないため、画面幅の125%の幅で上端に置き、ほぼ全員（左のウルフから
+   右のリッチまで）が見えるようにする。文字はキービジュアルの下側に重ね、画像の下端は背景色へ
+   なじませる（2026-10-21）。 */
+@media (max-aspect-ratio: 1/1) {
+  .lp-hero {
+    --kv-height: calc(125vw * 941 / 1672);
+    min-height: 0;
+    padding-top: calc(var(--kv-height) - 72px);
+    background:
+      linear-gradient(180deg, rgba(15, 18, 24, 0) 55%, rgba(15, 18, 24, 0.75) 80%, var(--lp-bg) 100%) center top / 100% var(--kv-height) no-repeat,
+      url("img/lp_key_visual.jpg") center top / 125vw auto no-repeat,
+      var(--lp-bg);
+  }
 }
 
 .lp-hero .logo {
