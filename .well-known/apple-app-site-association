@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TEAMID_REPLACE_ME.com.myoko.aoe"],
+        "components": [
+          { "/": "/ao8/helper", "comment": "Apex of 8: 助っ人URL（helper_system.md §3.2）" },
+          { "/": "/ao8/helper/*", "comment": "Apex of 8: 助っ人URL（helper_system.md §3.2）" }
+        ]
+      }
+    ]
+  }
+}

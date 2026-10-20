@@ -1,0 +1,605 @@
+/* 法務ページ共通のスタイル（GitHub Pagesでそのまま配信する静的ファイル）。 */
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --text: #1f2328;
+  --muted: #5f6670;
+  --accent: #5b3fb5;
+  --border: #dcdde1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15181f;
+    --surface: #20242c;
+    --text: #e8e9ec;
+    --muted: #a3a8b3;
+    --accent: #b9a5ff;
+    --border: #353a45;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* hidden属性の要素は、displayを指定したクラスがあっても必ず隠す（代わりの表示の切り替えに使う）。 */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", Meiryo, sans-serif;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+header.site {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+}
+
+header.site a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: 22px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-size: 17px;
+  margin: 32px 0 8px;
+  padding-left: 10px;
+  border-left: 4px solid var(--accent);
+}
+
+h3 {
+  font-size: 15px;
+  margin: 20px 0 4px;
+}
+
+p,
+ul,
+ol {
+  margin: 8px 0;
+}
+
+a {
+  color: var(--accent);
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  background: var(--surface);
+  font-size: 14px;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  width: 32%;
+  font-weight: 600;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+}
+
+.card-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.card-list a {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ---- LP（トップ・助っ人） ---- */
+.hero {
+  text-align: center;
+  padding: 16px 0 8px;
+}
+
+.hero img.logo {
+  width: min(100%, 420px);
+  height: auto;
+}
+
+.hero .catch {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 12px 0 4px;
+}
+
+.store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 200px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn[aria-disabled="true"] {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: default;
+  pointer-events: none;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.feature h3 {
+  margin: 0 0 4px;
+}
+
+.code-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  word-break: break-all;
+  margin: 8px 0;
+}
+
+.notice {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.helper-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.footer-links {
+  text-align: center;
+}
+
+.footer-links a {
+  margin: 0 6px;
+}
+
+/* ---- アプリのLP（index.html）。アプリの画面と同じダーク基調・金色のアクセントで固定する ---- */
+body.lp {
+  --lp-bg: #0f1218;
+  --lp-surface: #1a1f29;
+  --lp-text: #eef0f4;
+  --lp-muted: #a8afbd;
+  --lp-gold: #f0c35a;
+  --lp-gold-deep: #c8902a;
+  background: var(--lp-bg);
+  color: var(--lp-text);
+}
+
+body.lp a {
+  color: var(--lp-gold);
+}
+
+.lp-hero {
+  position: relative;
+  /* 画面の高さに合わせつつ、横長の画面ではキービジュアル（16:9）の縦横比の高さ（横幅×9/16）まで
+     下に伸ばし、画像の上端が切れないようにする。 */
+  min-height: max(min(92vh, 860px), 56.25vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 32px 16px 28px;
+  overflow: hidden;
+  /* キービジュアル（lp_key_visual.jpg）があればそれを、無い間は画像を使わずCSSだけで描く夜空と
+     光の柱を表示する（低解像度の画像を引き伸ばして荒く見えないようにするため）。 */
+  background:
+    linear-gradient(180deg, rgba(15, 18, 24, 0) 35%, rgba(15, 18, 24, 0.7) 68%, var(--lp-bg) 100%),
+    url("img/lp_key_visual.jpg") center top / cover no-repeat,
+    radial-gradient(ellipse 2.2% 46% at 50% 46%, rgba(255, 244, 214, 0.75), rgba(255, 228, 160, 0.25) 45%, transparent 75%),
+    radial-gradient(ellipse 12% 55% at 50% 52%, rgba(255, 214, 130, 0.22), transparent 70%),
+    radial-gradient(ellipse 34% 22% at 50% 88%, rgba(255, 210, 120, 0.25), transparent 70%),
+    radial-gradient(1.2px 1.2px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 27% 8%, #fff 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 41% 26%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 12%, #fff 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 78% 22%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 7%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 6% 36%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 94% 38%, #fff 50%, transparent 51%),
+    radial-gradient(ellipse 120% 60% at 50% 100%, rgba(240, 195, 90, 0.28), transparent 60%),
+    linear-gradient(180deg, #0b1030 0%, #1b1f4a 45%, #3a2e45 75%, var(--lp-bg) 100%);
+}
+
+.lp-hero .logo {
+  width: min(88%, 460px);
+  height: auto;
+  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.6));
+}
+
+.lp-hero .catch {
+  font-size: clamp(22px, 5.6vw, 34px);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 14px 0 6px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.lp-hero .genre {
+  display: inline-block;
+  margin: 14px 0 0;
+  padding: 2px 14px;
+  border: 1px solid var(--lp-gold);
+  border-radius: 999px;
+  color: var(--lp-gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  background: rgba(15, 18, 24, 0.55);
+}
+
+.lp-hero .lead {
+  max-width: 560px;
+  color: #dfe3ea;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+  margin: 0 auto;
+}
+
+body.lp .store-buttons {
+  margin: 22px 0 6px;
+}
+
+body.lp .btn {
+  background: linear-gradient(180deg, var(--lp-gold), var(--lp-gold-deep));
+  border-color: var(--lp-gold);
+  color: #2a1d05;
+}
+
+body.lp .btn.secondary {
+  background: transparent;
+  color: var(--lp-gold);
+}
+
+body.lp .btn[aria-disabled="true"] {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--lp-muted);
+}
+
+.lp-section {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 16px;
+}
+
+.lp-section .eyebrow {
+  color: var(--lp-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+.lp-section h2 {
+  border: none;
+  padding: 0;
+  font-size: clamp(20px, 4.6vw, 28px);
+  line-height: 1.45;
+  margin: 6px 0 14px;
+}
+
+.lp-section p {
+  color: #d4d8e0;
+}
+
+.lp-feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (min-width: 760px) {
+  .lp-feature {
+    grid-template-columns: 1fr 1fr;
+  }
+  .lp-feature.reverse .lp-visual {
+    order: -1;
+  }
+}
+
+.lp-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+.lp-areas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.lp-areas figure {
+  margin: 0;
+  position: relative;
+}
+
+.lp-areas img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.lp-areas figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px 4px 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
+}
+
+.lp-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.lp-point {
+  background: var(--lp-surface);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.lp-point h3 {
+  margin: 0 0 6px;
+  color: var(--lp-gold);
+}
+
+.lp-cta .catch {
+  font-size: clamp(22px, 5.6vw, 30px);
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.lp-cta {
+  text-align: center;
+  background:
+    radial-gradient(ellipse 70% 80% at 50% 100%, rgba(240, 195, 90, 0.22), transparent 70%),
+    linear-gradient(180deg, var(--lp-bg), #1b1f4a 60%, var(--lp-bg));
+  padding: 72px 16px;
+}
+
+body.lp footer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px 16px 40px;
+  color: var(--lp-muted);
+}
+
+/* 8種族の代表クラス（メイン画像を同じ構図の縦長カード〈300×400〉に切り抜き、種族イメージカラーの
+   枠で揃えて並べる。表示は最大112px幅程度に抑えて荒れないようにする）。 */
+.lp-roster {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 112px));
+  justify-content: center;
+  gap: 14px 12px;
+  margin: 22px auto 0;
+}
+
+@media (min-width: 760px) {
+  .lp-roster {
+    grid-template-columns: repeat(8, minmax(0, 112px));
+  }
+}
+
+.lp-roster figure {
+  margin: 0;
+  min-width: 0;
+  text-align: center;
+}
+
+.lp-roster img,
+.lp-icon {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  border: 2px solid var(--species, var(--lp-gold));
+  box-shadow: 0 0 0 3px rgba(15, 18, 24, 0.8), 0 6px 18px rgba(0, 0, 0, 0.55),
+    0 0 16px color-mix(in srgb, var(--species, var(--lp-gold)) 45%, transparent);
+  /* 透過部分の背景。種族の色をわずかに差したグラデーションにする。 */
+  background: radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--species, var(--lp-gold)) 28%, #2a3040), #141821 75%);
+}
+
+.lp-roster figcaption {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+.lp-roster figcaption small {
+  display: block;
+  color: var(--lp-muted);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+/* 種族イメージカラー（resources.md §12.3）。 */
+.sp-human { --species: #4a90d9; }
+.sp-demihuman { --species: #4fae82; }
+.sp-beast { --species: #c9822a; }
+.sp-demon { --species: #9b86c9; }
+.sp-ghost { --species: #c3b8e8; }
+.sp-material { --species: #8a8f98; }
+.sp-dragon { --species: #b03a3a; }
+.sp-deity { --species: #e0b23e; }
+
+/* 新規の紹介画像が無い間に、代わりに出すアイコンのパネル。 */
+.lp-icon-panel {
+  border-radius: 14px;
+  padding: 22px 16px;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 40%, rgba(240, 195, 90, 0.16), transparent 70%),
+    var(--lp-surface);
+  border: 1px solid rgba(240, 195, 90, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.lp-icon-panel figure {
+  margin: 0;
+  width: 84px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--lp-muted);
+}
+
+.lp-icon-panel figure.big {
+  width: 112px;
+}
+
+.lp-icon-panel figcaption {
+  margin-top: 6px;
+}
+
+.lp-icon-panel .vs {
+  color: var(--lp-gold);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* 2列のグリッドの中身が、最小幅でページの横幅を押し広げないようにする。 */
+.lp-feature > * {
+  min-width: 0;
+}
+
+@media (max-width: 480px) {
+  .lp-icon-panel {
+    gap: 10px;
+    padding: 18px 10px;
+  }
+  .lp-icon-panel figure {
+    width: 68px;
+  }
+  .lp-icon-panel figure.big {
+    width: 88px;
+  }
+}
+
+/* ストアの公式バッジ（assets/badges/）。各社のガイドラインに沿い、画像は改変せず、
+   App Storeのバッジは高さ40px以上で表示する。Google Playのバッジ画像は周囲に余白を含むため、
+   見た目のバッジの高さがApp Storeと揃うよう大きめに表示し、余白分を負のマージンで詰める。 */
+.store-badge-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.store-badge.apple {
+  height: 48px;
+  width: auto;
+}
+
+.store-badge.google {
+  height: 63px;
+  width: auto;
+  margin: -7.5px -4px;
+}
+
+/* 「3つの特徴」の上に並べる8種族の代表クラス。 */
+.lp-section > .lp-roster {
+  margin: 0 auto 28px;
+}

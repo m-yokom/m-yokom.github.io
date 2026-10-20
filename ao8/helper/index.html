@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>助っ人キャラクター | Apex of 8</title>
+  <meta name="description" content="Apex of 8の助っ人キャラクターが届きました。アプリで開いて、助っ人として追加できます。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Apex of 8 の助っ人キャラクター">
+  <meta property="og:description" content="このキャラクターを助っ人として借りて、一緒に育成しよう。">
+  <meta property="og:url" content="https://m-yokom.github.io/ao8/helper/">
+  <meta property="og:image" content="https://m-yokom.github.io/ao8/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+  <!-- 助っ人コードはURLの#以降にあり、サーバーへは送られない（helper_system.md §3.2）。 -->
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/icon.png">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/site.js" defer></script>
+</head>
+<body>
+<main id="helper">
+  <header class="site"><a href="../index.html">Apex of 8</a></header>
+
+  <section id="helper-found" hidden>
+    <h1>助っ人キャラクターが届きました</h1>
+    <div class="helper-card">
+      <p><strong id="helper-name"></strong></p>
+      <p class="notice">このキャラクターを助っ人として借りると、洗礼の旅のパートナーや修行・探索に連れて行けます。</p>
+    </div>
+
+    <h2>アプリをお持ちの方</h2>
+    <div class="store-buttons">
+      <a class="btn" id="open-app">アプリで開く</a>
+    </div>
+    <p class="notice">開かない場合は、下の助っ人コードをコピーして、アプリの「助っ人一覧」→「助っ人を追加」に貼り付けてください。</p>
+    <div class="code-box" id="helper-code"></div>
+    <div class="store-buttons">
+      <button class="btn secondary" id="copy-code" type="button">助っ人コードをコピー</button>
+    </div>
+
+    <h2>アプリをお持ちでない方</h2>
+    <p>アプリをインストールしたあと、上の助っ人コードをコピーして、アプリの「助っ人一覧」→「助っ人を追加」に貼り付けてください。</p>
+    <div class="store-buttons">
+      <a class="btn" data-store="ios">App Storeでダウンロード</a>
+      <a class="btn secondary" data-store="android">Google Playで手に入れる</a>
+    </div>
+  </section>
+
+  <section id="helper-missing" hidden>
+    <h1>助っ人コードが見つかりません</h1>
+    <p>リンクが途中で切れている可能性があります。共有してくれた人に、もう一度リンクを送ってもらってください。</p>
+    <div class="store-buttons">
+      <a class="btn secondary" href="../index.html">Apex of 8 について</a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-links">
+      <a href="../legal/contact.html">お問い合わせ</a>
+    </p>
+    <p class="notice">Apple、Appleのロゴは、米国およびその他の国におけるApple Inc.の商標です。App Storeは、Apple Inc.のサービスマークです。Google Play および Google Play ロゴは Google LLC の商標です。</p>
+  </footer>
+</main>
+</body>
+</html>
