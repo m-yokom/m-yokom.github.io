@@ -1,4 +1,4 @@
-// 公開用サイトの共通スクリプト（トップ・助っ人のLP）。
+// 公開用サイトの共通スクリプト（トップ・助っ人のLP・プレゼントのLP）。
 //
 // 【要記入】App Storeで公開したら、APP_STORE_URLにアプリのページのURLを入れる
 // （例: https://apps.apple.com/jp/app/id0000000000）。空のうちは「近日配信」と表示する。
@@ -89,7 +89,31 @@ function setupHelperPage() {
   });
 }
 
+// プレゼントのLP（presents.md §2.2）。プレゼントIDは英大文字と数字の10文字（0・O・1・Iは使わない）。
+// 中身はアプリ側にだけあるため、ここでは形式だけを確かめる。
+function setupGiftPage() {
+  const root = document.getElementById('gift');
+  if (!root) return;
+  const id = decodeURIComponent(location.hash.replace(/^#/, '')).trim().toUpperCase();
+  const valid = /^[A-HJ-NP-Z2-9]{10}$/.test(id);
+  document.getElementById('gift-found').hidden = !valid;
+  document.getElementById('gift-missing').hidden = valid;
+  if (!valid) return;
+  document.getElementById('gift-code').textContent = id;
+  document.getElementById('open-gift-app').href = `apexof8://gift?id=${id}`;
+  const copy = document.getElementById('copy-gift-code');
+  copy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(id);
+      copy.textContent = 'コピーしました';
+    } catch (_) {
+      copy.textContent = 'コピーできませんでした（コードを長押しして選択してください）';
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setupStoreButtons();
   setupHelperPage();
+  setupGiftPage();
 });

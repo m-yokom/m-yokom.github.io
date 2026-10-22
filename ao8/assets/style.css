@@ -475,6 +475,17 @@ body.lp .btn[aria-disabled="true"] {
   padding: 72px 16px;
 }
 
+/* 最後のダウンロード導線の下に添える、公式Xへの案内。 */
+.lp-follow {
+  margin: 20px 0 0;
+  font-size: 0.9rem;
+  color: var(--lp-muted);
+}
+
+.lp-follow a {
+  color: var(--lp-gold);
+}
+
 body.lp footer {
   max-width: 980px;
   margin: 0 auto;
