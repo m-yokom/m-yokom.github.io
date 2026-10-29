@@ -1,7 +1,8 @@
 // 公開用サイトの共通スクリプト（トップ・助っ人のLP・プレゼントのLP）。
 //
 // 【要記入】App Storeで公開したら、APP_STORE_URLにアプリのページのURLを入れる
-// （例: https://apps.apple.com/jp/app/id0000000000）。空のうちは「近日配信」と表示する。
+// （https://apps.apple.com/jp/app/id6827018106 。App Store Connectで2026-10-26に登録したApple ID。
+// 公開前に入れるとリンク先が見つからないため、公開日に入れる）。空のうちは「近日配信」と表示する。
 // Google Playは準備中（Android版はiOS版の後にリリースする方針）。
 const APP_STORE_URL = '';
 const GOOGLE_PLAY_URL = '';

@@ -2,10 +2,12 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["TEAMID_REPLACE_ME.com.myoko.aoe"],
+        "appIDs": ["W8MHDJ5DWG.com.myoko.aoe"],
         "components": [
           { "/": "/ao8/helper", "comment": "Apex of 8: 助っ人URL（helper_system.md §3.2）" },
-          { "/": "/ao8/helper/*", "comment": "Apex of 8: 助っ人URL（helper_system.md §3.2）" }
+          { "/": "/ao8/helper/*", "comment": "Apex of 8: 助っ人URL（helper_system.md §3.2）" },
+          { "/": "/ao8/gift", "comment": "Apex of 8: プレゼントURL（presents.md §2.2）" },
+          { "/": "/ao8/gift/*", "comment": "Apex of 8: プレゼントURL（presents.md §2.2）" }
         ]
       }
     ]

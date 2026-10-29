@@ -1,4 +1,4 @@
 # AdMob app-ads.txt
-# 【要記入】AdMobの「アプリ」→「app-ads.txt」に表示される1行で、この下の行を置き換える。
+# AdMobのパブリッシャーID（2026-10-28記入）。AdMobの「アプリ」→「app-ads.txt」に表示される1行と同じ。
 # このファイルはドメイン直下（https://m-yokom.github.io/app-ads.txt）に置く。同じAdMobアカウントの全アプリで共用する。
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-6103657253815542, DIRECT, f08c47fec0942fa0
