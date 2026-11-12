@@ -1,10 +1,10 @@
 // 公開用サイトの共通スクリプト（トップ・助っ人のLP・プレゼントのLP）。
 //
-// 【要記入】App Storeで公開したら、APP_STORE_URLにアプリのページのURLを入れる
-// （https://apps.apple.com/jp/app/id6827018106 。App Store Connectで2026-10-26に登録したApple ID。
-// 公開前に入れるとリンク先が見つからないため、公開日に入れる）。空のうちは「近日配信」と表示する。
+// APP_STORE_URLはApp Store Connectで2026-10-26に登録したApple ID（6827018106）のページ。
+// 2026-11-13（公開日）に向けて2026-11-05に記入。公開前はリンク先が見つからないため、公開用リポジトリへは公開日に反映する。
+// 空にすると「近日配信」と表示する。
 // Google Playは準備中（Android版はiOS版の後にリリースする方針）。
-const APP_STORE_URL = '';
+const APP_STORE_URL = 'https://apps.apple.com/jp/app/id6827018106';
 const GOOGLE_PLAY_URL = '';
 
 // assets/フォルダのURL（ページの階層によらずバッジ画像を参照するため、このスクリプト自身の場所から求める）。
