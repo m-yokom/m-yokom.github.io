@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ao8 Puzzle - Line ― 線でつなぐだけ、ひらめきパズル</title>
+  <meta name="description" content="同じ色の端点を線でつなぎ、すべてのマスを埋めるパズル。『Apex of 8』の島をめぐる8つのマップ、240問。パズルIQを上げて、Apex of 8 で使える報酬も。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ao8 Puzzle - Line ― 線でつなぐだけ、ひらめきパズル">
+  <meta property="og:description" content="同じ色の端点を線でつなぎ、すべてのマスを埋めるパズル。『Apex of 8』の島をめぐる8つのマップ、240問。">
+  <meta property="og:url" content="https://m-yokom.github.io/ao8line/">
+  <!-- リンクカード用の画像（1200×630。キービジュアル B2 の中央を切り出したもの） -->
+  <meta property="og:image" content="https://m-yokom.github.io/ao8line/assets/img/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#15181f">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/site.js" defer></script>
+  <script src="assets/rules.js" defer></script>
+</head>
+<body class="lp">
+
+<!-- ヒーロー -->
+<header class="hero">
+  <img class="logo" src="assets/logo.png" alt="Ao8 Puzzle - Line">
+  <p class="catch">線でつなぐだけ、ひらめきパズル</p>
+  <div class="store-buttons">
+    <a class="btn" data-store="ios">App Storeでダウンロード</a>
+  </div>
+</header>
+
+<!-- キービジュアル（docs/image_prompts.md §2）。assets/img/key_visual.jpg を置くと表示される。無い間は何も出さない -->
+<div class="key-visual">
+  <img src="assets/img/key_visual.jpg" alt="Apex of 8 の仲間たちが、線をつなぐパズルの完成を喜んでいるイラスト" onerror="this.remove();">
+  <p class="lead">指でなぞって、同じ色の端点をつなぐ。すべてのマスを埋めたら完成。ルールはシンプル、奥は深い、ひと筆ごとに頭がほどけるパズルです。</p>
+</div>
+
+<!-- 遊び方（アニメーション） -->
+<section id="rules">
+  <div class="wrap">
+    <p class="eyebrow">遊び方</p>
+    <h2>ルールは、3つだけ</h2>
+    <div class="rules">
+      <div class="demo">
+        <canvas id="rule-demo" aria-label="5×5の見本の問題を、同じ色の端点どうしを線でつないで解いていくアニメーション" role="img"></canvas>
+        <p class="demo-caption" id="rule-caption" aria-live="polite">同じ色の端点が2つずつ</p>
+      </div>
+      <ol class="rule-list">
+        <li><b>同じ色の端点を、線でつなぐ</b><span>端点（四角いマーク）から指でなぞって、同じ色の端点まで線を引きます。</span></li>
+        <li><b>線は縦と横だけ。ほかの線とは重ならない</b><span>1つのマスに通せる線は1本だけ。斜めには進めません。</span></li>
+        <li><b>すべてのマスを通ったら完成</b><span>全部の色がつながり、空いたマスがなくなればクリア。速く解くほど星が増えます。</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 特徴 -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">特徴</p>
+    <h2>5×5から20×20まで、<br>時間制限なくじっくり挑戦できるパズル</h2>
+    <div class="points">
+      <div class="point">
+        <h3>8つのマップ、240問</h3>
+        <p>小さな盤面から始まり、最後は20×20の大きな盤面へ。わかるところから線を引いていけば、少しずつ答えが見えてきます。</p>
+      </div>
+      <div class="point">
+        <h3>毎日の「今日のパズル」</h3>
+        <p>大きさの違う3問が毎日届きます。すき間の時間に、頭の体操を。</p>
+      </div>
+      <div class="point">
+        <h3>2つのチャレンジ</h3>
+        <p>100秒で何問解けるかの「100秒チャレンジ」と、先に頭の中で解いてから一気に引く「ひらめきチャレンジ」。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 島をめぐる -->
+<section>
+  <div class="wrap feature">
+    <div>
+      <p class="eyebrow">『Apex of 8』の島をめぐる</p>
+      <h2>草原から、山岳の頂上へ</h2>
+      <p>舞台は『Apex of 8』の洗礼の旅の島。草原・森林・海岸・廃村・砂漠・沼地・遺跡、そして山岳。パズルを解いて「パズルIQ」を上げるほど、新しいマップが開いていきます。</p>
+      <p class="muted">マップを星3つでそろえたり、ひらめきチャレンジで続けて解いたりすると、Ao8 のボスたちが仲間に。仲間はホームに遊びに来ます。</p>
+    </div>
+    <div class="areas">
+      <figure><img src="assets/img/area_grassland.jpg" alt="草原" loading="lazy"><figcaption>草原</figcaption></figure>
+      <figure><img src="assets/img/area_forest.jpg" alt="森林" loading="lazy"><figcaption>森林</figcaption></figure>
+      <figure><img src="assets/img/area_coast.jpg" alt="海岸" loading="lazy"><figcaption>海岸</figcaption></figure>
+      <figure><img src="assets/img/area_ruined_village.jpg" alt="廃村" loading="lazy"><figcaption>廃村</figcaption></figure>
+      <figure><img src="assets/img/area_desert.jpg" alt="砂漠" loading="lazy"><figcaption>砂漠</figcaption></figure>
+      <figure><img src="assets/img/area_swamp.jpg" alt="沼地" loading="lazy"><figcaption>沼地</figcaption></figure>
+      <figure><img src="assets/img/area_ruins.jpg" alt="遺跡" loading="lazy"><figcaption>遺跡</figcaption></figure>
+      <figure><img src="assets/img/area_mountain.jpg" alt="山岳" loading="lazy"><figcaption>山岳</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 画面 -->
+<section>
+  <div class="wrap feature reverse">
+    <div>
+      <p class="eyebrow">気持ちよく引ける</p>
+      <h2>なぞるだけ。<br>迷ったら、また引き直せばいい</h2>
+      <p>線は途中からでも引き直せます。2回タップで一本道を自動で伸ばしたり、払って一気に進めたり。</p>
+    </div>
+    <div class="phone"><img src="assets/img/shot_puzzle.jpg" alt="パズル画面のスクリーンショット" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- Apex of 8 との連携 -->
+<section id="ao8">
+  <div class="wrap">
+    <p class="eyebrow">Apex of 8 と連携</p>
+    <h2>パズルIQが、<br>戦士たちの力になる</h2>
+    <p class="goal">目指せ、パズルIQ 120</p>
+    <p>パズルIQを、同じiPhoneに入れた育成シミュレーションRPG『Apex of 8』に連携できます。パズルIQが上がるほど、Ao8 のミッションで報酬を受け取れます。もちろん、このアプリだけでも最後まで楽しめます。</p>
+    <p class="muted">※ 連携は、今後の『Apex of 8』のアップデートで使えるようになります。対応の時期は、このサイトでお知らせします。</p>
+    <!-- Ao8 のキービジュアル・ロゴ（Ao8 の公開用サイト ao8/assets/ の縮小版） -->
+    <a class="ao8-card" href="https://m-yokom.github.io/ao8/">
+      <img class="ao8-kv" src="assets/img/ao8_key_visual.jpg" alt="Apex of 8 のキービジュアル" loading="lazy">
+      <div class="ao8-body">
+        <img class="ao8-logo" src="assets/img/ao8_logo.png" alt="Apex of 8">
+        <p>8種族×8クラスの戦士候補を育て上げ、頂点を目指す育成シミュレーションRPG。</p>
+      </div>
+    </a>
+    <div class="store-buttons ao8-buttons">
+      <a class="btn secondary" href="https://m-yokom.github.io/ao8/">Apex of 8 公式サイト</a>
+      <a class="btn" data-store="ao8" href="https://apps.apple.com/jp/app/id6827018106" target="_blank" rel="noopener">App Store で見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- 最後の導線 -->
+<section class="cta">
+  <div class="wrap">
+    <p class="catch">最初の一本を、引いてみよう。</p>
+    <p class="muted">基本無料（広告あり）。広告を消す買い切りの購入もあります。</p>
+    <div class="store-buttons">
+      <a class="btn" data-store="ios">App Storeでダウンロード</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-links">
+    <a href="legal/terms.html">利用規約</a>
+    <a href="legal/privacy.html">プライバシーポリシー</a>
+    <a href="legal/tokushoho.html">特定商取引法に基づく表記</a>
+    <a href="legal/contact.html">お問い合わせ</a>
+  </p>
+  <p class="notice">Apple、Appleのロゴは、米国およびその他の国におけるApple Inc.の商標です。App Storeは、Apple Inc.のサービスマークです。</p>
+  <p>&copy; 2026 myoko</p>
+</footer>
+</body>
+</html>
