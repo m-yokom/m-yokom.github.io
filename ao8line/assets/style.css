@@ -166,7 +166,7 @@ th { background: var(--surface); white-space: nowrap; }
 
 .lp footer { padding: 32px 16px 40px; text-align: center; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
 .footer-links a { color: var(--muted); margin: 0 10px; display: inline-block; }
-.notice { max-width: 720px; margin: 12px auto; font-size: .75rem; }
+.lp .notice { max-width: 720px; margin: 12px auto; font-size: .75rem; } /* .lp p の margin に負けて左に寄らないよう .lp を付ける */
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
