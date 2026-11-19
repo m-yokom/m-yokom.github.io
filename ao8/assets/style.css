@@ -631,3 +631,75 @@ body.lp footer {
 .lp-section > .lp-roster {
   margin: 0 auto 28px;
 }
+
+/* パズルアプリ『Ao8 Puzzle - Line』との連携（2026-11-18追加）。 */
+.lp-link-rewards {
+  margin: 0 0 12px;
+  padding-left: 1.2em;
+  color: #d4d8e0;
+}
+
+.lp-link-rewards li {
+  margin: 4px 0;
+}
+
+.lp-link-rewards strong {
+  color: var(--lp-gold);
+}
+
+.lp-section p.lp-note {
+  color: var(--lp-muted);
+  font-size: 13px;
+}
+
+.lp-link-card {
+  display: block;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--lp-text);
+  text-decoration: none;
+  background: var(--lp-bg);
+}
+
+.lp-visual .lp-link-card img.lp-link-kv {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.lp-link-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 48px 16px 14px;
+  text-align: center;
+  background: linear-gradient(transparent, rgba(10, 12, 16, 0.92) 55%);
+}
+
+.lp-visual .lp-link-card img.lp-link-logo {
+  width: min(55%, 260px);
+  margin: 0 auto 6px;
+  border-radius: 0;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+}
+
+.lp-link-body p {
+  margin: 0;
+  font-size: 13px;
+  color: #d6dae2;
+}
+
+@media (max-width: 520px) {
+  .lp-link-body {
+    position: static;
+    background: var(--lp-bg);
+    padding: 12px 14px 16px;
+  }
+}
+
+body.lp .lp-link-buttons {
+  margin-top: 14px;
+}

@@ -1,9 +1,8 @@
 // 公式サイトの共通スクリプト（ストアのボタン）。
 //
 // APP_STORE_URL は App Store Connect で登録した Apple ID（6835279551）のページ。
-// 公開前はリンク先が見つからないため、空のまま（「近日配信」と表示）にしておき、配信開始を確かめてから記入する。
-// 【要記入】配信開始後: 'https://apps.apple.com/jp/app/id6835279551'
-const APP_STORE_URL = '';
+// 空にすると「近日配信」の表示に戻る。2026-11-19 配信開始（リリース）に合わせて記入。
+const APP_STORE_URL = 'https://apps.apple.com/jp/app/id6835279551';
 
 // Apex of 8（連携先）の App Store のページ
 const AO8_APP_STORE_URL = 'https://apps.apple.com/jp/app/id6827018106';
